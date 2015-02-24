@@ -12,4 +12,5 @@ import Foundation
 class Audio {
     var name = "sound"
     var URL = NSURL()
+    var length = 0
 }

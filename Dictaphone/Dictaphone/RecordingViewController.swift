@@ -63,14 +63,17 @@ class RecordingViewController: UIViewController {
     
     func saveAudioFile(){
         var sound = Audio()
+        var ms = Int(arc4random_uniform(2234423426))
         let soundName = saveDialog.textFieldAtIndex(0)!.text
         if countElements(soundName) > 0 {
            sound.name = soundName
+           sound.length = ms
            println(sound.name)
            self.previousViewController.soundList.append(sound)
         } else {
            var num = self.previousViewController.soundList.count
            sound.name = "Recording-\(num + 1)"
+           sound.length = ms
            println(sound.name)
            self.previousViewController.soundList.append(sound)
         }
